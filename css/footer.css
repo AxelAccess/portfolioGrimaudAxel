@@ -1,0 +1,115 @@
+/* Menu */
+#menu-footer{
+    border-top: 1.3px solid #BEBEBE;
+    list-style-type: none;
+    display: none;
+    justify-content: center;
+    gap: 45px;
+    font-family: "Space Mono";
+    padding-top: 14px;
+    margin: auto;
+    padding-bottom: 14px;
+}
+
+            /* LightBox */
+/* Effet assombrissant de la lightbox */
+.lightbox{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-Color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-Index: 1;       
+}
+
+/* Photo de la lightbox */
+.Blockphoto{
+    overflow: auto;
+    width: 1000px;
+    height: 700px;
+    border: 10px ridge #191919;
+}
+.lightBoxPic{ 
+    width: 100%;
+    margin-bottom: -10px;
+
+}
+
+/* InfoPhoto de la lightbox */
+.infoPhotoLightBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: default;
+    width: 60%;
+}
+
+/* Couleur infoPhoto de la lightbox */
+.lightBoxRefPhoto{
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+.lightBoxCatPhoto{
+    color: white;
+}
+
+/* Flèche de la lightbox */
+.lightBoxArrowsPhoto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    z-Index: 1;
+}
+#rightArrow{
+    margin-left: 50px;
+}
+#leftArrow{
+    margin-right: 50px;
+}
+.arrowLeftText, .arrowRightText{
+    display: flex;
+    color: white;
+    gap: 20px;
+    cursor: pointer;
+}
+
+
+/* Croix de la lightbox */
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.7;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: white;
+    
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  .ico{
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+  }

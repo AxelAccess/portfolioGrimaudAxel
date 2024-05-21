@@ -1,0 +1,121 @@
+.topSection{
+    display: flex;
+    gap: 21px;
+    padding-bottom: 20px;
+}
+.blocMainPic{
+    width: 500px;
+    height: 750px;
+    margin-top: 38px;
+    overflow: auto;
+    border:10px ridge #191919;
+}
+.mainPics{
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    margin-bottom: -10px;
+}
+.descriptionBlock{
+    width: 50%;
+    padding-bottom: 10px;
+}
+.descriptionPicsTitle{
+    color: #BEBEBE;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    font-size: 66px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 70px;
+    text-transform: uppercase;
+}
+.descriptionPics{
+    color: #BEBEBE;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.middleSection{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #BEBEBE;
+    border-bottom: 1px solid #BEBEBE;
+}
+.leftMiddleSection, .rightMiddleSection{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.rightMiddleSection{
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.insterested{
+    color: #BEBEBE;
+    font-size: 18px;
+}
+.centerMiddleSection{
+    align-content: center;
+}
+.contactButton{
+    width: 272px;
+    height: 50px;
+    border-radius: 2px;
+    border-color: white;
+    background: #D8D8D8;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "amita";
+}
+.navPic{
+
+}
+#hoverImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.navBox{
+    position: relative;
+    width: 81px;
+    border: 4px ridge #191919;
+    margin-bottom: 5px;
+}
+.arrows{
+    display: flex;
+    gap: 30px;
+}
+.arrow{
+    width: 25px;
+}
+
+
+.alsoLike{
+    display: flex;
+    justify-content: left;  
+    margin-top: 77px;
+    margin-bottom: 52px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;}
+
+.alsoLikePics{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;   
+    margin-bottom: 110px;
+}
+.alsoLikePic{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

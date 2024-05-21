@@ -1,0 +1,23 @@
+.heroHeader{
+    width: 100%;
+    height: calc(100vh - 80px);
+    object-fit: cover;
+    max-height: 982px;
+
+}
+
+
+
+.titleHeader{
+    position: absolute;
+    left:calc(40% - (750px/2));
+    top: calc(50% - (80px/2));
+}
+
+.picTitleHeader{
+    width: 80%;
+}
+.divHeroHeader{
+    position: relative;
+
+}

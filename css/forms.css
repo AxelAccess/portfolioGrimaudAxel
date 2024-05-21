@@ -1,0 +1,63 @@
+.wpcf7{
+	margin-top: 45px;
+}
+.contactWindow{
+    display: none;
+    position: fixed;
+    background-color: #bebebe;
+    border: 5px;
+    border-style: solid;
+    border-color: black;
+    top: 10px;
+    left: 30%;
+    z-index: 9999;
+    width: 600px;
+    height: 769px;
+	text-align: start;
+    border-top: 10px groove #191919;
+    border-right: 10px groove #191919;
+    border-bottom: 10px ridge #191919;
+    border-left: 10px ridge #191919;
+}
+
+.cssLabel{
+	margin-left: 145px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+textarea {
+	margin-left: 145px;
+	width: 263px;
+	height: 210px;
+	border: 1px solid #ffffff;
+    background-color: #cdcdcd;
+	border-radius: 8px;
+
+}
+
+input[type="text" i], input[type="email"] {
+    display: block;
+    margin-left: 145px;
+    width: 263px;
+    height: 40px;
+	border: 1px solid #ffffff;
+    background-color: #cdcdcd;
+	border-radius: 8px;
+    font-family: "amita";
+}
+input[type="submit" i] {
+    font-family: "amita";
+    display: block;
+    margin-top: 20px;
+	margin-left: 145px;
+	width: 263px;
+	height: 50px;
+	background: #cdcdcd;
+	border: 1px solid #ffffff;
+	border-radius: 2px;
+}
+
