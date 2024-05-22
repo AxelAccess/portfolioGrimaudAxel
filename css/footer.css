@@ -28,7 +28,7 @@
 }
 
 /* Photo de la lightbox */
-.Blockphoto{
+.projectBlock{
     overflow: auto;
     width: 1000px;
     height: 700px;
@@ -40,8 +40,8 @@
 
 }
 
-/* InfoPhoto de la lightbox */
-.infoPhotoLightBox{
+/* projectInfo de la lightbox */
+.projectInfoLightBox{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -49,8 +49,8 @@
     width: 60%;
 }
 
-/* Couleur infoPhoto de la lightbox */
-.lightBoxRefPhoto{
+/* Couleur projectInfo de la lightbox */
+.lightBoxRefProject{
     color: white;
     margin: auto;
     text-align: center;
@@ -60,7 +60,7 @@
 }
 
 /* Flèche de la lightbox */
-.lightBoxArrowsPhoto{
+.lightBoxArrowsProject{
     display: flex;
     align-items: center;
     justify-content: center;

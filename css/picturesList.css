@@ -140,8 +140,7 @@
     margin-top: 80px;
     position: absolute;
 }
-.blockFormsForRight{
-}
+
 .blockForms{
     display: flex;
     gap: 35px;
@@ -165,7 +164,7 @@
     margin-top: 40px;
     margin-bottom: 40px;
 }
-#loadMorePhoto{
+#buttonLoadMoreProjects{
     display: flex;
     width: 272px;
     height: 50px;
@@ -178,7 +177,7 @@
     font-family: "amita";
 }
 
-.photo-container{
+.project-container{
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -206,22 +205,14 @@
 .overlay:hover{
     animation: pulsefilter 2s infinite;
 }
-#infoPhoto{
+#projectInfo{
     position: absolute;
 }
 .hide{
     display: none;
 }
 
-.refPhoto, .catPhoto{
-    color: white!important;
-    filter: brightness(100%)!important;
-}
 
-.refPhoto{
-    margin-left:17px;
-    cursor: default;
-}
 .catPhoto{
     margin-right:23px;
     cursor: default;

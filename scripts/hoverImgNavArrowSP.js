@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'GET',
             url: ajax_object.ajaxurl,
             data: {
-                action: 'hoverPhoto',
+                action: 'hoverProjectImage',
                 post_id: postId 
             },
             success: function(response) {               
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'GET',
             url: ajax_object.ajaxurl,
             data: {
-                action: 'hoverPhoto',
+                action: 'hoverProjectImage',
                 post_id: postId 
             },
             success: function(response) {  

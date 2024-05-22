@@ -53,24 +53,24 @@ get_header();
 
 
 <section class="picturesList container">
-    <div id="photo-container" class="photo-container"> 
+    <div id="project-container" class="project-container"> 
         <?php      
         $args = array(
-            'post_type'      => 'photo',
+            'post_type'      => 'projet',
             'posts_per_page' => 8,       
         );
-        $photos = new WP_Query($args);  
-        if($photos->have_posts() ) : while( $photos->have_posts() ) : $photos->the_post(); 
-        get_template_part('templatsParts/PhotoCatalog');
+        $project = new WP_Query($args);  
+        if($project->have_posts() ) : while( $project->have_posts() ) : $project->the_post(); 
+        get_template_part('templatsParts/ProjectCatalog');
         endwhile; endif; wp_reset_postdata();?>
     </div>
  
 
     <div class= "centerButton">
-        <button id="loadMorePhoto" 
+        <button id="buttonLoadMoreProjects" 
             data-ajaxurl="<?php echo admin_url( 'admin-ajax.php' ); ?>" 
-            data-action="loadMorePhotos"
-            data-nonce="<?php echo wp_create_nonce('loadMorePhotos'); ?>">
+            data-action="loadMoreProjects"
+            data-nonce="<?php echo wp_create_nonce('loadMoreProjects'); ?>">
             Charger plus
         </button>
     </div>

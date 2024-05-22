@@ -14,9 +14,9 @@ function mouseOutOverlay(event) {
 function hoverEvent(event, mouseHover) {
     if(event.target.closest(".overlay")) {
         let overlay = event.target.closest(".overlay");
-        let img = overlay.querySelector('.alsoLikePic');
-        let infoPhotoId = img.getAttribute('data-idPhoto');
-        let info = document.getElementById(infoPhotoId);
+        let img = overlay.querySelector('.projectOverlay');
+        let infoProjectId = img.getAttribute('data-idProjet');
+        let info = document.getElementById(infoProjectId);
         if (mouseHover) {
             info.classList.remove("hide");
             info.classList.add("display");
@@ -27,10 +27,5 @@ function hoverEvent(event, mouseHover) {
             img.style.filter = "brightness(100%)";
         }
     }
-        // Colore la catégorie en blanc
-        let catPhotos = document.querySelectorAll(".catPhoto a");
-        catPhotos.forEach(function(catPhoto) {
-        catPhoto.classList.add('whiteCat'); 
-        });    
 }
 

@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
         background.style.display    = "block"
         
         //Réference
-        let referenceElement = document.getElementById('referenceId')
-        let refPhotoField    = document.getElementById('refPhoto')
+        let referenceElement = document.getElementById('titleId')
+        let refPhotoField    = document.getElementById('refProject')
         let referenceValue   = referenceElement.textContent.replace('Référence : ', '')        
         refPhotoField.value  = referenceValue;
     })

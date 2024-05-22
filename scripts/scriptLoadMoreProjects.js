@@ -1,16 +1,16 @@
 jQuery(document).ready(function($) {
-    $('#loadMorePhoto').click(function() {
+    $('#buttonLoadMoreProjects').click(function() {
         
         let ajaxurl = $(this).data('ajaxurl');
         $.ajax({
             type: 'GET',
             url: ajaxurl,
             data: {
-                action: 'loadMorePhotos',
+                action: 'loadMoreProjects',
                 offset: $('.overlay').length
             },
             success: function(response) {
-                $('.photo-container').append(response);
+                $('.project-container').append(response);
                 let links = document.querySelectorAll(".catPhoto a");
                 links.forEach(function(link) {
                     link.classList.add('whiteCat');               

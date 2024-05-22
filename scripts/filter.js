@@ -1,51 +1,4 @@
 jQuery(document).ready(function($) {
-    $('#photoCategorySelect').change(function() {
-        let categoryId = $(this).val();
-        if (categoryId) {
-            $.ajax({
-                type: 'GET',
-                url: ajax_object.ajaxurl,
-                data: {
-                    action: 'get_photos_by_category',
-                    category_id: categoryId
-                },
-                success: function(response) {
-                    $('#photo-container').html(response);
-                    
-                    let links = document.querySelectorAll(".catPhoto a");
-                    links.forEach(function(link) {
-                        link.classList.add('whiteCat');
-                    });
-                },
-            });
-        }
-    });
-});
-
-jQuery(document).ready(function($) {
-    $('#formatSelect').change(function() {
-        let formatId = $(this).val();
-        if (formatId) {
-            $.ajax({
-                type: 'GET',
-                url: ajax_object.ajaxurl,
-                data: {
-                    action: 'get_photos_by_formats',
-                    category_id: formatId
-                },
-                success: function(response) {
-                    $('#photo-container').html(response);
-                    let links = document.querySelectorAll(".catPhoto a");
-                    links.forEach(function(link) {
-                        link.classList.add('whiteCat');                       
-                    });
-                },               
-            });
-        }
-    });
-});    
-
-jQuery(document).ready(function($) {
     $('#publishSelect').change(function() {
         let publishId = $(this).val();
         if (publishId) {
@@ -53,15 +6,11 @@ jQuery(document).ready(function($) {
                 type: 'GET',
                 url: ajax_object.ajaxurl,
                 data: {
-                    action: 'get_photos_by_dates',
+                    action: 'get_project_by_dates',
                     publish_id: publishId 
                 },
                 success: function(response) {
-                    $('#photo-container').html(response);
-                    let links = document.querySelectorAll(".catPhoto a");
-                    links.forEach(function(link) {
-                        link.classList.add('whiteCat');                       
-                    });
+                    $('#project-container').html(response);
                 },
             });
         }
@@ -99,10 +48,6 @@ jQuery(document).ready(function($) {
                 options.style.visibility = 'hidden';
 
                 let selectedValue = e.target.getAttribute('data-value');
-                $('#photoCategorySelect').val(selectedValue);
-                $('#photoCategorySelect').trigger('change');
-                $('#formatSelect').val(selectedValue);
-                $('#formatSelect').trigger('change');
                 $('#publishSelect').val(selectedValue);
                 $('#publishSelect').trigger('change');
             }

@@ -7,7 +7,7 @@ function theme_enqueue_styles() {
 
     wp_enqueue_script('lightbox', get_stylesheet_directory_uri(). '/scripts/lightbox.js');
 
-    wp_enqueue_script('morePhotoScript', get_stylesheet_directory_uri(). '/scripts/scriptLoadMorePhoto.js', array("jquery"));
+    wp_enqueue_script('moreProjectsScript', get_stylesheet_directory_uri(). '/scripts/scriptLoadMoreProjects.js', array("jquery"));
 
     wp_enqueue_script('contactReference', get_stylesheet_directory_uri(). '/scripts/contactRef.js');
 
@@ -28,82 +28,8 @@ add_action('wp_enqueue_scripts', 'enqueue_jquery');
 //**Page principale**\\
 
 // Récupere le nom de la catégorie de la photo
-function get_category_names($post_id) {
-    $categories = get_the_terms($post_id, 'categorie_photo');
-    $catListNames = '';
 
-    if ($categories) {
-        $catListNames = implode(',', array_column($categories, 'name'));
-    }
-    return $catListNames;
-}
-
-
-// photos par catégorie
-function get_photos_by_category() {
-    if (isset($_GET['category_id'])) {
-        $category_id = $_GET['category_id'];
-        $args = array(
-            'post_type' => 'photo',
-            'posts_per_page' => -1,
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'categorie_photo',     
-                    'terms' => $category_id,
-                ),
-            ),
-        );
-
-        $photos = new WP_Query($args);
-
-        if($photos->have_posts() ) {
-            while( $photos->have_posts() ) {
-                $photos->the_post(); 
-                $post_id = get_the_ID();
-                $catListNames = get_category_names($post_id);
-                get_template_part('templatsParts/PhotoCatalog');
-            }
-        }
-        wp_die();
-    }
-}
-add_action('wp_ajax_get_photos_by_category', 'get_photos_by_category');
-add_action('wp_ajax_nopriv_get_photos_by_category', 'get_photos_by_category');
-
-
-function get_photos_by_formats() {
-    if (isset($_GET['category_id'])) {
-        $category_id = $_GET['category_id'];
-        $args = array(
-            'post_type' => 'photo',
-            'posts_per_page' => -1,
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'format',
-                    'field' => 'term_id',
-                    'terms' => $category_id,
-                ),
-            ),
-        );
-
-        $photos = new WP_Query($args);
-
-        if($photos->have_posts() ) {
-            while( $photos->have_posts() ) {
-                $photos->the_post(); 
-                $post_id = get_the_ID();
-                $catListNames = get_category_names($post_id);
-                get_template_part('templatsParts/PhotoCatalog');
-            }
-        }
-        wp_die();
-    }
-}
-add_action('wp_ajax_get_photos_by_formats', 'get_photos_by_formats');
-add_action('wp_ajax_nopriv_get_photos_by_formats', 'get_photos_by_formats');
-
-
-function get_photos_by_dates() {
+function get_project_by_dates() {
     $orderby = 'date'; 
     $order = 'ASC';   
 
@@ -118,64 +44,62 @@ function get_photos_by_dates() {
     }
 
     $args = array(
-        'post_type'      => 'photo',
+        'post_type'      => 'projet',
         'posts_per_page' => 8,
         'orderby'        => $orderby,
         'order'          => $order
     );
 
-    $photos = new WP_Query($args);
+    $project = new WP_Query($args);
 
-    if($photos->have_posts() ) {
-        while( $photos->have_posts() ) {
-            $photos->the_post(); 
+    if($project->have_posts() ) {
+        while( $project->have_posts() ) {
+            $project->the_post(); 
             $post_id = get_the_ID();
-            $catListNames = get_category_names($post_id);
-            get_template_part('templatsParts/PhotoCatalog');
+            get_template_part('templatsParts/ProjectCatalog');
         }
     }
     wp_die();
 }
-add_action('wp_ajax_get_photos_by_dates', 'get_photos_by_dates');
-add_action('wp_ajax_nopriv_get_photos_by_dates', 'get_photos_by_dates');
+add_action('wp_ajax_get_project_by_dates', 'get_project_by_dates');
+add_action('wp_ajax_nopriv_get_project_by_dates', 'get_project_by_dates');
 
 
-function loadMorePhotos() {
+function loadMoreProjects() {
     $offset = $_GET['offset'] ?? 0;
     $args = array(
-        'post_type'      => 'photo',
+        'post_type'      => 'projet',
         'posts_per_page' => 8,
         'offset'         => $offset
     );
 
-    $photos = new WP_Query($args);
+    $project = new WP_Query($args);
 
-    if($photos->have_posts() ) {
-        while( $photos->have_posts() ) {
-            $photos->the_post(); 
+    if($project->have_posts() ) {
+        while( $project->have_posts() ) {
+            $project->the_post(); 
             $post_id = get_the_ID();
-            $catListNames = get_category_names($post_id);
-            get_template_part('templatsParts/PhotoCatalog');
+            get_template_part('templatsParts/ProjectCatalog');
         }
     }
     wp_die();
 }
-add_action('wp_ajax_loadMorePhotos', 'loadMorePhotos');
-add_action('wp_ajax_nopriv_loadMorePhotos', 'loadMorePhotos');
+add_action('wp_ajax_loadMoreProjects', 'loadMoreProjects');
+add_action('wp_ajax_nopriv_loadMoreProjects', 'loadMoreProjects');
 
 //** **/
 
 //**SinglePage**\\
 
 //display photo hover
-function hoverPhoto() {
+function hoverProjectImage() {
     $post_id = $_GET['post_id']; 
     $image_url = get_the_post_thumbnail_url($post_id, 'thumbnail'); 
     echo $image_url; 
     wp_die(); 
 }
-add_action('wp_ajax_hoverPhoto', 'hoverPhoto');
-add_action('wp_ajax_nopriv_hoverPhoto', 'hoverPhoto');
+add_action('wp_ajax_hoverProjectImage', 'hoverProjectImage');
+add_action('wp_ajax_nopriv_hoverProjectImage', 'hoverProjectImage');
 
 //Loop for arrows & photo
 function get_adjacent_post_loop($next = true) {
@@ -183,7 +107,7 @@ function get_adjacent_post_loop($next = true) {
     if (!$post) {
         $noAdjacentPost = array(
             'numberposts' => 1,
-            'post_type'   => 'photo',
+            'post_type'   => 'projet',
             'orderby'     => 'date',
             'order'       => $next ? 'DESC' : 'ASC'
         );

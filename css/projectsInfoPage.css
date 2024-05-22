@@ -73,9 +73,7 @@
     font-weight: 400;
     font-family: "amita";
 }
-.navPic{
 
-}
 #hoverImage {
     width: 100%;
     height: auto;
@@ -108,13 +106,8 @@
     letter-spacing: 1.8px;
     text-transform: uppercase;}
 
-.alsoLikePics{
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;   
-    margin-bottom: 110px;
-}
-.alsoLikePic{
+
+.projectOverlay{
     width: 100%;
     height: auto;
     object-fit: cover;
